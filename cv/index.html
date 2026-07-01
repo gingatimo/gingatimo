@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Tống Minh Giang — Software Engineer · CV</title>
+<meta name="description" content="Curriculum Vitae of Tống Minh Giang, Software Engineer specializing in Angular." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --accent: #4f46e5;
+    --accent-dark: #3730a3;
+    --accent-tint: #eef0fe;
+    --ink: #1c2230;
+    --muted: #5c6472;
+    --faint: #8b93a3;
+    --line: #e6e8ee;
+    --page-w: 210mm;
+    --page-h: 297mm;
+    --pad: 15mm;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #eceef3;
+    color: var(--ink);
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-size: 11px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  a { color: var(--accent-dark); text-decoration: none; }
+
+  .page {
+    width: var(--page-w);
+    min-height: var(--page-h);
+    margin: 18px auto;
+    padding: var(--pad);
+    background: #fff;
+    box-shadow: 0 6px 30px rgba(24, 30, 55, 0.14);
+    position: relative;
+  }
+
+  /* ---------- Header ---------- */
+  header {
+    padding-bottom: 16px;
+    border-bottom: 2px solid var(--accent);
+  }
+  .name {
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+    margin: 0;
+  }
+  .title {
+    margin: 5px 0 0;
+    font-size: 12.5px;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    color: var(--accent);
+    text-transform: uppercase;
+  }
+  .head-meta {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 40px;
+    margin-top: 14px;
+  }
+  .head-meta .col {
+    font-size: 10.3px;
+    color: var(--muted);
+    line-height: 1.95;
+    white-space: nowrap;
+  }
+  .head-meta .col a { color: var(--muted); }
+  .head-meta .row { display: flex; align-items: center; gap: 6px; }
+  .head-meta svg { width: 12px; height: 12px; flex: none; color: var(--accent); }
+
+  /* ---------- Sections ---------- */
+  section { margin-top: 10px; }
+  .sec-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 7px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .summary { margin: 0; color: #2b3242; font-size: 11px; line-height: 1.6; }
+
+  /* ---------- Experience ---------- */
+  .entry { margin-bottom: 10px; break-inside: avoid; }
+  .entry:last-child { margin-bottom: 0; }
+  .entry-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+  }
+  .role { font-size: 12.5px; font-weight: 700; color: var(--ink); }
+  .company { font-weight: 600; color: var(--accent-dark); }
+  .dates {
+    font-size: 10.2px;
+    font-weight: 600;
+    color: var(--faint);
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+  }
+  .meta {
+    font-size: 10.2px;
+    color: var(--muted);
+    margin: 2px 0 5px;
+  }
+  .meta .tech { color: var(--accent-dark); font-weight: 500; }
+  ul.bullets { margin: 0; padding: 0; list-style: none; }
+  ul.bullets li {
+    position: relative;
+    padding-left: 14px;
+    margin: 2px 0;
+    color: #333b4a;
+    font-size: 11px;
+    line-height: 1.55;
+  }
+  ul.bullets li::before {
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: 6px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+
+  /* ---------- Skills ---------- */
+  .skill-row { display: flex; gap: 10px; margin: 7px 0; align-items: baseline; }
+  .skill-key {
+    flex: 0 0 128px;
+    font-size: 10.3px;
+    font-weight: 700;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .tags { display: flex; flex-wrap: wrap; gap: 5px; }
+  .tag {
+    background: var(--accent-tint);
+    color: var(--accent-dark);
+    border: 1px solid #dfe1fb;
+    border-radius: 5px;
+    padding: 2px 8px;
+    font-size: 10.2px;
+    font-weight: 500;
+  }
+
+  /* ---------- Education / Personal ---------- */
+  .edu-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; }
+  .edu-school { font-size: 12px; font-weight: 700; }
+  .edu-degree { font-size: 10.6px; color: var(--muted); margin-top: 2px; }
+
+  /* ---------- Screen-only print button ---------- */
+  .print-btn {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    z-index: 10;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    border-radius: 999px;
+    padding: 11px 20px;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 8px 22px rgba(79, 70, 229, 0.4);
+  }
+  .print-btn:hover { background: var(--accent-dark); }
+  .print-btn svg { width: 16px; height: 16px; }
+
+  /* ---------- Print ---------- */
+  @page { size: A4; margin: 0; }
+  @media print {
+    html, body { background: #fff; }
+    .page { margin: 0; box-shadow: none; width: auto; min-height: auto; }
+    .print-btn { display: none !important; }
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+  <main class="page">
+    <header>
+      <div class="head-top">
+        <h1 class="name">Tống Minh Giang</h1>
+        <p class="title">Software Engineer · Angular Specialist</p>
+      </div>
+      <div class="head-meta">
+        <div class="col">
+          <div class="row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+            <span>1992</span>
+          </div>
+          <div class="row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <span>Male</span>
+          </div>
+        </div>
+        <div class="col">
+          <div class="row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Vietnam</span>
+          </div>
+          <div class="row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><path d="M4 22V15"/></svg>
+            <span>Vietnamese</span>
+          </div>
+        </div>
+        <div class="col">
+          <div class="row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+            <a href="mailto:ginga.timo@gmail.com">ginga.timo@gmail.com</a>
+          </div>
+          <div class="row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <a href="tel:+84949348386">+84 949 348 386</a>
+          </div>
+        </div>
+        <div class="col">
+          <div class="row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            <a href="https://github.com/gingatimo">github.com/gingatimo</a>
+          </div>
+          <div class="row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            <a href="https://timoagency.com">timoagency.com</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section>
+      <h2 class="sec-label">Summary</h2>
+      <p class="summary">Software Engineer with <b>8+ years</b> building and shipping web applications, specializing in <b>Angular</b> and <b>TypeScript</b>. Currently at Techcombank, developing and deploying large-scale front-end applications with Docker and Nginx. Comfortable across the modern front-end stack — Angular, React, RxJS and Signals — with a focus on clean, maintainable UI code.</p>
+    </section>
+
+    <section>
+      <h2 class="sec-label">Experience</h2>
+
+      <div class="entry">
+        <div class="entry-head">
+          <div><span class="role">Software Engineer</span> — <span class="company">Techcombank (TCB)</span></div>
+          <div class="dates">2021 — Present</div>
+        </div>
+        <div class="meta">Full-time · Vietnam &nbsp;·&nbsp; <span class="tech">Angular 18–21 · TypeScript · Nx · Nginx · Docker</span></div>
+        <ul class="bullets">
+          <li>Develop core banking features for retail (individual) customers.</li>
+          <li>Build internal applications supporting bank tellers (over-the-counter service) and back-office operations.</li>
+          <li>Migrate the web application to Backbase LTS and upgrade Angular to newer versions.</li>
+          <li>Own code review and web deployment versions, contributing across the full SDLC.</li>
+          <li>Use AI-assisted tools in daily development and code review to boost productivity.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <div><span class="role">Web Developer</span> — <span class="company">NTQ Solution JSC</span></div>
+          <div class="dates">2020 — 2021</div>
+        </div>
+        <div class="meta">Full-time · Vietnam &nbsp;·&nbsp; <span class="tech">Angular 8 · PWA · TypeScript</span></div>
+        <ul class="bullets">
+          <li>Developed a PWA e-commerce application with Angular 8 for a Singapore SME client.</li>
+          <li>Collaborated with a distributed team, working alongside developers based in India.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <div><span class="role">Web Developer</span> — <span class="company">CMC Global Company Limited</span></div>
+          <div class="dates">2017 — 2020</div>
+        </div>
+        <div class="meta">Full-time · Vietnam &nbsp;·&nbsp; <span class="tech">ReactJS · Angular 6 · TypeScript</span></div>
+        <ul class="bullets">
+          <li>Joined as a Java fresher, then moved into front-end and built an internal project-management app with ReactJS.</li>
+          <li>Delivered an insurance platform for a French client using Angular 6 and TypeScript, in an offshore team.</li>
+          <li>Built a logistics application for a Singapore client.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <div><span class="role">Civil Engineer</span> — <span class="company">TRICC JSC</span></div>
+          <div class="dates">2015 — 2017</div>
+        </div>
+        <div class="meta">Full-time · Vietnam</div>
+        <ul class="bullets">
+          <li>Civil engineering role before transitioning into software development in 2017.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="sec-label">Skills</h2>
+      <div class="skill-row">
+        <div class="skill-key">Frameworks</div>
+        <div class="tags"><span class="tag">Angular (18–21)</span><span class="tag">React</span><span class="tag">RxJS</span><span class="tag">Angular Signals</span></div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-key">Languages</div>
+        <div class="tags"><span class="tag">TypeScript</span><span class="tag">JavaScript (ES6+)</span><span class="tag">HTML5</span></div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-key">Styling &amp; UI</div>
+        <div class="tags"><span class="tag">SCSS / Sass</span><span class="tag">Responsive Design</span><span class="tag">PWA</span></div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-key">Testing</div>
+        <div class="tags"><span class="tag">Jest</span><span class="tag">Vitest</span></div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-key">DevOps &amp; Tools</div>
+        <div class="tags"><span class="tag">Docker</span><span class="tag">Nginx</span><span class="tag">Git</span><span class="tag">Vite</span></div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-key">Practices</div>
+        <div class="tags"><span class="tag">Component Architecture</span><span class="tag">REST APIs</span><span class="tag">Agile</span></div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="sec-label">Education</h2>
+      <div class="edu-head">
+        <div class="edu-school">University of Transport and Communications</div>
+        <div class="dates">2010 — 2015</div>
+      </div>
+      <div class="edu-degree">B.Eng., Civil Engineering</div>
+    </section>
+
+    <section>
+      <h2 class="sec-label">Languages</h2>
+      <div class="edu-head">
+        <div class="edu-school">English</div>
+        <div class="dates">TOEIC (ELSA)</div>
+      </div>
+      <div class="edu-degree">Listening 300 · Reading 360</div>
+    </section>
+
+  </main>
+
+  <button class="print-btn" onclick="window.print()" aria-label="Save as PDF">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 14h12v8H6z"/></svg>
+    Save as PDF
+  </button>
+</body>
+</html>
